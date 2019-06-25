@@ -16,8 +16,8 @@ class GifSearch extends React.Component {
   }
 
   handleSubmit = (event) => {
-    event.preventDefault
-    this.props.handleSubmit(this.state)
+    event.preventDefault()
+    this.props.handleResults(this.state)
   }
 
   render () {

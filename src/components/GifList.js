@@ -5,7 +5,8 @@ class GifList extends React.Component {
     return(
       <div>
         <ul>
-          {this.props.firstThree.map((gif,idx) => <li><img key={idx} src={gif.url}/></li>)}
+
+          {this.props.firstThree.map((gif,idx) => <li><img key={idx} src={gif.images.original.url}/></li>)}
         </ul>
       </div>
     )
