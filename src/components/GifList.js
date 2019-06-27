@@ -11,7 +11,9 @@ export default class GifList extends Component {
    }
 
    renderGifs = () => {
-      console.log(this.state.gifs)
+      if (this.props.gifs !== null) {
+         return this.props.gifs.map(gif => <li>< img src={gif.images.original.url}/></li>)
+      }
    }
    
 

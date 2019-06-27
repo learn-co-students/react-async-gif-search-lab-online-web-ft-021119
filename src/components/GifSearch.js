@@ -1,6 +1,8 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 
-export default class GifSearch extends Component {
+
+
+export default class GifSearch extends PureComponent {
    constructor(props) {
       super(props)
    
@@ -13,14 +15,20 @@ export default class GifSearch extends Component {
       })
    }
 
+   handleSubmit = (event) => {
+      if (event) event.preventDefault()
+      this.props.handleSubmit(this.state.query)
+   }
+
    componentDidMount() {
-      console.log(`GifSearch ${this.props}`)
+      this.handleSubmit()
    }
    
+
    render() {
       return (
          <div>
-            <form onSubmit={this.props.handleSubmit(this.state.query)}>
+            <form onSubmit={this.handleSubmit}>
                <input type="text" name="query" onChange={this.handleChange}/>
                <input type="submit"/>
             </form>
