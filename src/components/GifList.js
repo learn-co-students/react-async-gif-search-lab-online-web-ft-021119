@@ -1,14 +1,19 @@
 import React from 'react'
 
 const GifList = props => {
-    return (
-      <ul>
-        <li>
-      
-        </li>
-      </ul>
-    )
+  console.log(props.gifs)
 
+  return (
+   <div>
+     <ul>
+       {props.gifs.map (gif =>
+           <li>
+           <img src={gif}/>
+           </li>)
+         }
+     </ul>
+   </div>
+  )
 
 }
 export default GifList
